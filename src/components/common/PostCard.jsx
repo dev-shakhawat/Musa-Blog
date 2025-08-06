@@ -1,18 +1,24 @@
 import React from 'react'
 import { Link } from 'react-router'
 import { HiOutlineDotsVertical } from "react-icons/hi";
+import colorSchema from "../../assets/colorSchema"
 
-export default function PostCard({img , tag , blogerPic , blogerName = "Tracey Wilson" , postDate = "August 20, 2022"}) {
+export default function PostCard({img , tag , blogerPic , blogerName = "Tracey Wilson" , postDate = "August 20, 2022"}) { 
+
+  const color = colorSchema();
+
   return (
-    <div className=' rounded-[12px] p-4 border border-gray-200 shadow-md   '>
+    <div style={{border :  `1px solid ${color.border}  `}} className=' rounded-[12px] p-4  shadow-md   '>
         {img ? <img src="" alt="" className='rounded-[12px] '/> : <div  className='h-[240px] bg-gray-400 rounded-[12px]'></div>}
 
         {/* post details */}
         <div className="mt-4 p-2  ">
 
             <p className=" bg-[#4B6BFB]/5 py-1 px-2.5  rounded-[6px] w-fit text-[#4B6BFB] font-ubuntu font-medium text-sm  ">{tag}</p>
+            
 
-            <Link className={`mt-4  line-clamp-2 text-ellipsis font-ubuntu font-bold text-xl   `}>
+            {/* title */}
+            <Link style={{color: color.textprimary}} className={`mt-4  line-clamp-2 text-ellipsis font-ubuntu font-bold text-xl   `}>
                The Impact of Technology on the Workplace: How Technology is Changing 
             </Link>
 

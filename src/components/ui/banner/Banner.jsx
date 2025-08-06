@@ -13,12 +13,13 @@ export default function Banner() {
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 2000
+    autoplaySpeed: 2000,
+    arrows: false
   };
 
   return (
     <Container>
-      <div className="relative h-[400px] mt-2  mx-auto ">
+      <div className="relative h-[320px] mt-2  mx-auto ">
         {/* slider */}
         <Slider {...bnrSlideSetting}>
           {/* slider item */}

@@ -7,8 +7,8 @@ export const navSlice = createSlice({
     setting: false
   },
   reducers: { 
-    drawerStatus: (state) => {
-      state.drawer = !state.drawer
+    drawerStatus: (state , action) => {
+      state.drawer = action.payload
     },
     settingStatus: (state , action) => {
       state.setting = action.payload

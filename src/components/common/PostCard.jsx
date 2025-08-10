@@ -1,42 +1,21 @@
 import React from 'react'
-import { Link } from 'react-router'
-import { HiOutlineDotsVertical } from "react-icons/hi";
-import colorSchema from "../../assets/colorSchema"
+import colorSchema from '../../assets/colorSchema'
+import PostDetails from './PostDetails'
+import { useNavigate } from 'react-router'
 
-export default function PostCard({img , tag , blogerPic , blogerName = "Tracey Wilson" , postDate = "August 20, 2022"}) { 
-
-  const color = colorSchema();
-
+export default function PostCard({tag , title , posterimage , postername , postdate , blogImage , postId , description}) {
+    const color = colorSchema()
+    const navigate = useNavigate()
+    
   return (
-    <div style={{border :  `1px solid ${color.border}  `}} className=' rounded-[12px] p-4  shadow-md   '>
-        {img ? <img src="" alt="" className='rounded-[12px] '/> : <div  className='h-[240px] bg-gray-400 rounded-[12px]'></div>}
+    <div onClick={() =>  navigate(`/blogs/${postId}`)} className='p-4 shadow-lg border border-gray-50/5 rounded-[10px] cursor-pointer    '>
+        
+        {/* blogImage */}
+        {blogImage ? <img src={blogImage} alt='blogImage' className='w-full 2xl:h-60 xl:h-50 lg:h-40 md:h-36 sm:h-32 h-28  object-cover rounded-[10px]    ' /> : <div style={{background: color.bgsecondary}} className='w-full h-60 rounded-[10px] '></div>}
 
         {/* post details */}
-        <div className="mt-4 p-2  ">
+        <PostDetails className='md:mt-6 mt-2' description={description} tag={tag} title={title} posterimage={posterimage} postername={postername} postdate={postdate} />
 
-            <p className=" bg-[#4B6BFB]/5 py-1 px-2.5  rounded-[6px] w-fit text-[#4B6BFB] font-ubuntu font-medium text-sm  ">{tag}</p>
-            
-
-            {/* title */}
-            <Link style={{color: color.textprimary}} className={`mt-4  line-clamp-2 text-ellipsis font-ubuntu font-bold text-xl   `}>
-               The Impact of Technology on the Workplace: How Technology is Changing 
-            </Link>
-
-            {/* bloger profile */}
-            <div className="flex items-center justify-between mt-5   ">
-                <div className="flex items-center gap-5">
-                    {blogerPic ? <img src="" alt="" /> :
-                    <div className=' w-9 h-9 rounded-[10px] bg-gray-200    '></div>}
-
-                    {blogerName && <p className=' font-ubuntu font-medium text-base leading-6 text-[#97989F]   '>{blogerName}</p>}
-                    -
-                    {postDate && <p className=' font-ubuntu font-medium text-base leading-6 text-[#97989F]   '>{postDate}</p>}
-                </div>
-                <button type="button" className='text-xl text-[#97989F]  ' ><HiOutlineDotsVertical/></button>
-
-            </div>
-
-        </div>
     </div>
   )
 }

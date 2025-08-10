@@ -3,6 +3,7 @@ import Layout from "./components/common/Layout";
 import Home from "./pages/Home";
 import BlogDetails from "./pages/BlogDetails";
 import Blogs from "./pages/Blogs";
+import Contact from "./pages/Contact";
 
 
 function App() { 
@@ -14,6 +15,7 @@ function App() {
          <Route index element={<Home />} />
          <Route path="/blogs" element={<Blogs />} />
          <Route path="/details" element={<BlogDetails />} />
+         <Route path="/contact" element={<Contact />} />
       </Route>
     </Routes>
   </BrowserRouter>

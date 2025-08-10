@@ -3,8 +3,7 @@ import React from 'react'
 // component
 import Logo from '../Logo'
 import NavSearch from './NavSearch'
-import Theme from '../Theme'
-import Drawer from '../Drawer'
+import Theme from '../Theme' 
 
 // icons
 import { TbUserCircle } from 'react-icons/tb'
@@ -16,12 +15,13 @@ import colorSchema from '../../../assets/colorSchema'
 export default function Nav() {
 
   const color = colorSchema();
+  
  
   return ( 
  
   <nav style={{background: color.bgprimary , borderBottom : `1px solid ${color.border} `}} className='fixed top-0 left-0 w-full z-10   '>
     <div className="flex items-center justify-between p-3 shadow  relative   ">
-      <Drawer/>
+ 
 
     {/* logo */}
     <Logo/>

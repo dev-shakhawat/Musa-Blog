@@ -4,4 +4,11 @@
 
 @theme{
   --font-ubuntu: 'Ubuntu', sans-serif;
+
+
+  /* colors */
+
+  --color-primary: #4B6BFB;
+  --color-secondary: #696A75;
+  --color-tertiary: #F2F2F2;
 }

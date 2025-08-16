@@ -48,7 +48,7 @@ export default function Theme() {
          
 
          {/* theme cart */}
-         <div   style={{background: color.bgprimary ,  border: `1px solid ${color.border}` }} className={`${setting ? "right-0" : "-right-100"} transition-all duration-300 w-80 z-10 rounded-[10px] p-5 absolute top-12`}>
+         <div   style={{background: color.bgprimary ,  border: `1px solid ${color.border}` }} className={`${setting ? "scale-100 opacity-100 " : "scale-90 opacity-0 "} right-36 transition-all duration-300 w-80 z-10 rounded-[10px] p-5 absolute top-12`}>
         <div style={{borderBottom: `1px solid ${color.border}` }} className='flex items-center gap-2   pb-2    ' >
             {selectedtab && <button style={{color: color.textprimary}} onClick={()=> setSelectedtab("")} type="button" className='cursor-pointer    text-xl ' ><IoArrowBack/></button>}
             <span style={{color: color.textprimary}} className='font-ubuntu font-medium text-2xl leading-6    cursor-pointer select-none capitalize '>{!selectedtab ? "Setting" : selectedtab}</span>
